@@ -13,7 +13,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.set('json replacer', (k, v) => (v === null ? undefined : v))
+
+app.use('/auth', Routes.AuthenticationRoutes);
 app.use('/users', Routes.UsersRoutes);
+app.use('/courses', Routes.CoursesRoutes);
+app.use('/classrooms', Routes.ClassroomsRoutes);
 
 app.use(ErrorsHandler.nonExistingEndpointHandler);
 app.use(ErrorsHandler.errorHandler);
