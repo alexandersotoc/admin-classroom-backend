@@ -1,7 +1,4 @@
-const User = require('../models').User;
-const Course = require('../models').Course;
-const Classroom = require('../models').Classroom;
-const ClassroomStudents = require('../models').ClassroomStudents;
+const { User, Course, Classroom, ClassroomStudents } = require('../models');
 
 const { responseToSequelizeError } = require('../utils/responses');
 

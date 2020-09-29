@@ -8,11 +8,11 @@ function errorHandler (error, req, res, next) {
 	res.status(error.status || 500)
 	if (error.status == 404) {
 		return res.json({
-			message: 'La ruta especificada no existe'
+			message: 'The route does not exist'
 		});
 	} else {
 		return res.json({
-			message: 'Error interno de servidor, reintente en unos minutos por favor',
+			message: 'Internal server error',
 			error: error.message
 		});
 	}
